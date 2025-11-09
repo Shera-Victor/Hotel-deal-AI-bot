@@ -1,1 +1,35 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Weekly Hotel Deals</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    h1 { color: #2e6da4; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+    td { font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>Weekly Luxury Hotel Deals</h1>
+  <p>Date: {{ date }}</p>
+  <table>
+    <tr>
+      <th>Hotel</th>
+      <th>Current Price (₹)</th>
+      <th>Forecasted Price (₹)</th>
+      <th>Discount Ratio</th>
+    </tr>
+    {% for d in deals %}
+    <tr>
+      <td>{{ d.hotel }}</td>
+      <td>{{ d.current_price }}</td>
+      <td>{{ d.expected_price }}</td>
+      <td>{{ d.discount_ratio }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
